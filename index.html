@@ -16,7 +16,7 @@
       }
 
       var host = window.document.location.host.replace(/:.*/, '');
-      var ws = new WebSocket('ws://' + host + ':5000');
+      var ws = new WebSocket('ws://' + host);
       ws.onmessage = function (event) {
         updateStats(event.data);
       };
