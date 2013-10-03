@@ -1,19 +1,20 @@
 # Ruby/Faye Websocket Test
 
-Uses the [Faye websocket implementation](https://github.com/faye/faye-websocket-ruby).
+A tiny demo using the [Faye](https://github.com/faye/faye-websocket-ruby) WebSocket implementation.
+
 
 # Running
 
 ``` bash
-$ bundle install
-$ PORT=8080 foreman start
+bundle install
+foreman start
 ```
 
 # Running on Heroku
 
 ``` bash
-$ heroku create
-$ heroku labs:enable websockets
-$ git push heroku master
-$ heroku open
+heroku create
+heroku labs:enable websockets
+git push heroku master
+heroku open
 ```

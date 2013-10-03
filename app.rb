@@ -9,7 +9,13 @@ App = lambda do |env|
 
     ws.on :open do |e|
       puts "websocket connection open"
-      EM.add_periodic_timer(1) { ws.send(Time.now.to_s) }
+      timer = EM.add_periodic_timer(1) do
+        begin
+          ws.send(Time.now.to_s.to_json)
+        rescue NoMethodError
+          EM.cancel_timer(timer)
+        end
+      end
     end
 
     ws.on :close do |event|
